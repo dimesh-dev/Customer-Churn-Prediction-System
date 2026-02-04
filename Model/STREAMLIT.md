@@ -6,6 +6,10 @@ Run the app from the project root:
 streamlit run Model/streamlit_app.py
 ```
 
+For Streamlit Cloud deployment:
+- keep `requirements.txt` at repo root
+- use Python 3.11 or 3.12 (not 3.13 for TensorFlow)
+
 The app uses:
 - `Model/best_nn_model.keras` (trained neural network)
 - `Model/cleaned_telco_churn.csv` (reference preprocessing schema)

@@ -2,8 +2,18 @@ from pathlib import Path
 
 import pandas as pd
 import streamlit as st
-import tensorflow as tf
 from sklearn.preprocessing import StandardScaler
+
+try:
+    import tensorflow as tf
+except ModuleNotFoundError:
+    st.set_page_config(page_title="Churn Risk Console", page_icon="C", layout="wide")
+    st.error("TensorFlow is not installed in this environment.")
+    st.info(
+        "Install dependencies from requirements.txt and deploy with Python 3.11 or 3.12, "
+        "then restart the app."
+    )
+    st.stop()
 
 
 BASE_DIR = Path(__file__).resolve().parent
